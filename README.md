@@ -1,2 +1,29 @@
-# SDDDDDD
-SD_PROTOTYPE_WEBSITE_WITH_SQL
+# TenantHub — Tenant Client Management System
+
+This repository contains a copied snapshot of `Landre-ope/SD-Final-Project` so work here remains independent and does not modify the original project.
+
+A responsive frontend prototype for centralized rental property administration. It covers the tenant login, dashboard, payment overview, maintenance request, and basement reservation workflows described in the project requirements.
+
+The demo now persists account activity in the browser with `localStorage`: submitted maintenance requests, basement reservations, and rent payments update the dashboard, activity history, notifications, and calendar after refresh. This is client-side demo persistence; a production deployment should replace it with authenticated API/database storage.
+
+Rent payments use a two-step demo workflow: the tenant submits the payment for verification, then the landlord review controls on the Payments screen approve or decline it. Pending maintenance reports and basement bookings remain manageable from the dashboard activity history.
+
+## Run locally
+
+This is a dependency-free static prototype. Open `index.html` directly in a browser, or serve the project directory with any static file server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.
+
+## Prototype database
+
+A prototype SQL schema is included at `database/schema.sql` for backend integration work.
+
+To create a local SQLite database from it:
+
+```bash
+sqlite3 database/tenanthub_prototype.db < database/schema.sql
+```
